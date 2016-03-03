@@ -1,0 +1,6 @@
+framework module Pods_Accolade_Connect {
+  umbrella header "Pods-Accolade Connect-umbrella.h"
+
+  export *
+  module * { export * }
+}
