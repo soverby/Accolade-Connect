@@ -20,6 +20,7 @@
 		CD33B2AC1C87338A00B4773A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2AB1C87338A00B4773A /* DataService.swift */; };
 		CD33B2B01C8733AE00B4773A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2AF1C8733AE00B4773A /* Constants.swift */; };
 		CD33B2B21C87B85800B4773A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B11C87B85800B4773A /* SessionManager.swift */; };
+		CD33B2B61C87CA0300B4773A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B51C87CA0300B4773A /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		CD33B2AB1C87338A00B4773A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		CD33B2AF1C8733AE00B4773A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD33B2B11C87B85800B4773A /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		CD33B2B51C87CA0300B4773A /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		CD33B2701C87312800B4773A /* Accolade Connect */ = {
 			isa = PBXGroup;
 			children = (
+				CD33B2B31C87C9CF00B4773A /* Data */,
 				CD33B2AA1C87338A00B4773A /* Services */,
 				CD33B2A21C8732FF00B4773A /* UI */,
 				CD33B2711C87312800B4773A /* AppDelegate.swift */,
@@ -177,6 +180,22 @@
 				CD33B2B11C87B85800B4773A /* SessionManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CD33B2B31C87C9CF00B4773A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CD33B2B41C87C9E500B4773A /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CD33B2B41C87C9E500B4773A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CD33B2B51C87CA0300B4773A /* UserProfile.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D75C66A08949289B7CD23434 /* Pods */ = {
@@ -374,6 +393,7 @@
 				CD33B2A81C8732FF00B4773A /* LoginController.swift in Sources */,
 				CD33B2721C87312800B4773A /* AppDelegate.swift in Sources */,
 				CD33B2A91C8732FF00B4773A /* SignupController.swift in Sources */,
+				CD33B2B61C87CA0300B4773A /* UserProfile.swift in Sources */,
 				CD33B2AC1C87338A00B4773A /* DataService.swift in Sources */,
 				CD33B2B01C8733AE00B4773A /* Constants.swift in Sources */,
 				CD33B2B21C87B85800B4773A /* SessionManager.swift in Sources */,
