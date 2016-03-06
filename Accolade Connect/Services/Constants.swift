@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import Firebase
+
+// Global Typealiases
+typealias FirebaseObserveEventType = (snapshot: FDataSnapshot!) -> (Void)
 
 let BASE_URL = "https://accolade-connect.firebaseio.com/"
 
-// Session Keys
-let USER_ID = "userUID"
+
 

@@ -21,6 +21,7 @@
 		CD33B2B01C8733AE00B4773A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2AF1C8733AE00B4773A /* Constants.swift */; };
 		CD33B2B21C87B85800B4773A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B11C87B85800B4773A /* SessionManager.swift */; };
 		CD33B2B61C87CA0300B4773A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B51C87CA0300B4773A /* UserProfile.swift */; };
+		CD33B2B81C87D44B00B4773A /* HAProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B71C87D44B00B4773A /* HAProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		CD33B2AF1C8733AE00B4773A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD33B2B11C87B85800B4773A /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CD33B2B51C87CA0300B4773A /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		CD33B2B71C87D44B00B4773A /* HAProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HAProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				CD33B2B51C87CA0300B4773A /* UserProfile.swift */,
+				CD33B2B71C87D44B00B4773A /* HAProfile.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				CD33B2A71C8732FF00B4773A /* ConnectController.swift in Sources */,
 				CD33B2A81C8732FF00B4773A /* LoginController.swift in Sources */,
 				CD33B2721C87312800B4773A /* AppDelegate.swift in Sources */,
+				CD33B2B81C87D44B00B4773A /* HAProfile.swift in Sources */,
 				CD33B2A91C8732FF00B4773A /* SignupController.swift in Sources */,
 				CD33B2B61C87CA0300B4773A /* UserProfile.swift in Sources */,
 				CD33B2AC1C87338A00B4773A /* DataService.swift in Sources */,

@@ -224,18 +224,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-su-RfI">
-                                <rect key="frame" x="140" y="216" width="186" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Whut:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNn-Ny-XVj">
-                                <rect key="frame" x="65" y="219" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AccoladeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="GfW-OM-fU0">
                                 <rect key="frame" x="180" y="51" width="240" height="128"/>
                                 <constraints>
@@ -243,6 +231,24 @@
                                     <constraint firstAttribute="width" constant="240" id="R6X-r1-NW3"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tempProfile" translatesAutoresizingMaskIntoConstraints="NO" id="uAj-b6-XB9">
+                                <rect key="frame" x="20" y="187" width="158" height="102"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tanisha Small" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-Ps-zly">
+                                <rect key="frame" x="197" y="186" width="179" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="onlineStatus" translatesAutoresizingMaskIntoConstraints="NO" id="m4w-JF-mq8">
+                                <rect key="frame" x="197" y="216" width="35" height="29"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-1C-Fdi">
+                                <rect key="frame" x="240" y="220" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -251,7 +257,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tempLabel" destination="H1g-su-RfI" id="jm1-Xc-dtb"/>
+                        <outlet property="haOnlineStatusImage" destination="m4w-JF-mq8" id="euk-DI-D5B"/>
+                        <outlet property="haOnlineStatusText" destination="NWd-1C-Fdi" id="6rc-KU-lFj"/>
+                        <outlet property="haProfileImage" destination="uAj-b6-XB9" id="vqZ-XQ-gEf"/>
+                        <outlet property="haProfileName" destination="QsB-Ps-zly" id="wxT-fY-bWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6j-5t-doj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,5 +270,7 @@
     </scenes>
     <resources>
         <image name="AccoladeLogo" width="82" height="32"/>
+        <image name="onlineStatus" width="33" height="33"/>
+        <image name="tempProfile" width="80" height="50"/>
     </resources>
 </document>
