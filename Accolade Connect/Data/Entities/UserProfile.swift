@@ -23,8 +23,8 @@ class UserProfile {
     
     init(dictionary: Dictionary<String, AnyObject>) {
         
-        if let userIsHa = dictionary["isHA"] as? Bool {
-            self._isHA = userIsHa
+        if let userIsHa = dictionary["isHA"] as? String {
+            self._isHA = userIsHa == "true" ? true : false;
         }
         
         if let haid = dictionary["haid"] as? String {

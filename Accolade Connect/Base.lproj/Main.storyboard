@@ -231,24 +231,36 @@
                                     <constraint firstAttribute="width" constant="240" id="R6X-r1-NW3"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tempProfile" translatesAutoresizingMaskIntoConstraints="NO" id="uAj-b6-XB9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAj-b6-XB9">
                                 <rect key="frame" x="20" y="187" width="158" height="102"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tanisha Small" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-Ps-zly">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-Ps-zly">
                                 <rect key="frame" x="197" y="186" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="onlineStatus" translatesAutoresizingMaskIntoConstraints="NO" id="m4w-JF-mq8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="offlineStatus" translatesAutoresizingMaskIntoConstraints="NO" id="m4w-JF-mq8">
                                 <rect key="frame" x="197" y="216" width="35" height="29"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-1C-Fdi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Offline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-1C-Fdi">
                                 <rect key="frame" x="240" y="220" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVN-32-sbJ">
+                                <rect key="frame" x="26" y="317" width="304" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-22-NIw">
+                                <rect key="frame" x="23" y="355" width="310" height="175"/>
+                                <color key="backgroundColor" red="0.96212121212121215" green="0.11381826727137602" blue="0.91531424749145274" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -257,10 +269,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chatTextView" destination="WU6-22-NIw" id="8Ik-OD-mWV"/>
                         <outlet property="haOnlineStatusImage" destination="m4w-JF-mq8" id="euk-DI-D5B"/>
                         <outlet property="haOnlineStatusText" destination="NWd-1C-Fdi" id="6rc-KU-lFj"/>
                         <outlet property="haProfileImage" destination="uAj-b6-XB9" id="vqZ-XQ-gEf"/>
                         <outlet property="haProfileName" destination="QsB-Ps-zly" id="wxT-fY-bWr"/>
+                        <outlet property="textEntry" destination="vVN-32-sbJ" id="hNM-dy-qcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6j-5t-doj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,7 +284,6 @@
     </scenes>
     <resources>
         <image name="AccoladeLogo" width="82" height="32"/>
-        <image name="onlineStatus" width="33" height="33"/>
-        <image name="tempProfile" width="80" height="50"/>
+        <image name="offlineStatus" width="33" height="33"/>
     </resources>
 </document>

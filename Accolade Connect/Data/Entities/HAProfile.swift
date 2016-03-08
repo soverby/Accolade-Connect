@@ -14,6 +14,7 @@ class HAProfile {
     private var _lastName: String!
     private var _friendlyName: String!
     private var _pictureSrc: String!
+    private var _isOnline: Bool!
     
     var firstName: String {
         return _firstName
@@ -31,6 +32,10 @@ class HAProfile {
         return _pictureSrc
     }
     
+    var isOnline: Bool {
+        return _isOnline
+    }
+    
     init(dictionary: Dictionary<String, AnyObject>) {
         if let actualizedFirstName = dictionary["firstName"] as? String {
             self._firstName = actualizedFirstName
@@ -46,6 +51,10 @@ class HAProfile {
         
         if let actualizedImageSrc = dictionary["imgSrc"] as? String {
             self._pictureSrc = actualizedImageSrc
+        }
+        
+        if let actualizedIsOnline = dictionary["isOnline"] as? String {
+            self._isOnline = actualizedIsOnline == "true" ? true : false
         }
         
     }

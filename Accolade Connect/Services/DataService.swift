@@ -47,4 +47,30 @@ class DataService {
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
     
+    func downloadImage(urlString: String, completionHandler: ImageDownloadCompletionType) {
+        let request = NSURLRequest(URL: NSURL(string: urlString)!)
+
+        NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
+            if error != nil {
+                print("Failed to load image for url: \(urlString), error: \(error?.description)")
+                return
+            }
+            
+            guard let httpResponse = response as? NSHTTPURLResponse else {
+                print("Not an NSHTTPURLResponse from loading url: \(urlString)")
+                return
+            }
+            
+            if httpResponse.statusCode != 200 {
+                print("Bad response statusCode: \(httpResponse.statusCode) while loading url: \(urlString)")
+                return
+            }
+            
+            completionHandler(data: data, response: response, error: error)
+        }.resume()
+    }
 }
+
+
+
+
