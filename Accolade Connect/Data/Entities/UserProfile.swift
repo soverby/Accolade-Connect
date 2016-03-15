@@ -10,14 +10,14 @@ import Foundation
 
 class UserProfile {
     
-    private var _isHA: Bool!
-    private var _healthAssistantId: String!
+    private var _isHA: Bool?
+    private var _healthAssistantId: String?
     
-    var isHA: Bool {
+    var isHA: Bool? {
         return _isHA
     }
     
-    var healthAssistantId: String {
+    var healthAssistantId: String? {
         return _healthAssistantId
     }
     

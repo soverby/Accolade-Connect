@@ -12,10 +12,13 @@ class LoginController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var backgroundImage: UIImageView!
+
+    var userProfileHandle: UInt = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        backgroundImage.image = UIImage(named: "MainBackground")
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -41,7 +44,7 @@ class LoginController: UIViewController {
                     self.loginErrorAlert("Oops!", message: "Check your username and password.")
                 } else {
                     SessionManager.session[USER_ID] = authData.uid
-                    self.performSegueWithIdentifier("loggedInSegue", sender: nil)
+                    self.userProfileHandle = DataService.dataService.USER_PROFILE_REF.observeEventType(.Value, withBlock:self.observeMyUserProfile())
                 }
             })
             
@@ -54,9 +57,30 @@ class LoginController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
-        presentViewController(alert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.presentViewController(alert, animated: true, completion: nil)
+        })
     }
     
+    func observeMyUserProfile() -> FirebaseObserveEventType {
+        return { snapshot -> Void in
+            if let postDictionary = snapshot.value as? Dictionary<String, AnyObject> {
+                let userProfile = UserProfile(dictionary: postDictionary)
+                SessionManager.session[USER_PROFILE] = userProfile
+                DataService.dataService.USER_PROFILE_REF.removeObserverWithHandle(self.userProfileHandle)
+            
+                if let isHA = userProfile.isHA {
+                    if(isHA) {
+                        self.performSegueWithIdentifier("HALoggedInSegue", sender: nil)
+                    } else {
+                        self.performSegueWithIdentifier("clientLoggedInSegue", sender: nil)
+                    }
+                } else {
+                    self.loginErrorAlert("Fail!", message: "Data fail! userProfile isHA is null")
+                }
+            }
+        }
+    }
     
 }
 

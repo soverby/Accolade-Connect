@@ -12,6 +12,7 @@ import Foundation
 let USER_ID = "userUID"
 let USER_PROFILE = "userProfile"
 let HA_PROFILE = "haProfile"
+let REMOTE_USER_ID = "remoteUserId"
 
 class SessionManager {
     

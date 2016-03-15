@@ -2,14 +2,20 @@ import Foundation
 import Firebase
 
 class DataService {
+    
+    enum DataErrors: ErrorType {
+        case MissingSessionData(sessionKey: String)
+    }
+    
+    let USER_PROFILES = "user_profiles"
+    let HA_PROFILES = "ha_profiles"
+    let MESSAGE_CENTER = "message_center"
+    
     static let dataService = DataService()
     
     private var _BASE_REF = Firebase(url: "\(BASE_URL)")
     private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
     private var _HA_QUEUE_REF = Firebase(url: "\(BASE_URL)/ha_queue")
-    private var _USER_PROFILE_REF = Firebase(url: "\(BASE_URL)/user_profiles")
-    private var _HA_PROFILE_REF = Firebase(url: "\(BASE_URL)/ha_profiles")
-    private var _USER_CHAT_SESSION_REF = Firebase(url: "\(BASE_URL)/user_chat_sessions")
     
     var BASE_REF: Firebase {
         return _BASE_REF
@@ -25,24 +31,74 @@ class DataService {
     
     var CURRENT_USER_REF: Firebase {
         let userID = SessionManager.session[USER_ID] as! String
-        return Firebase(url: "\(BASE_REF)").childByAppendingPath("users").childByAppendingPath(userID)
+        return Firebase(url: "\(USER_REF)").childByAppendingPath(userID)
     }
     
     var USER_PROFILE_REF: Firebase {
         let userID = SessionManager.session[USER_ID] as! String
-        return Firebase(url: "\(BASE_REF)").childByAppendingPath("user_profiles").childByAppendingPath(userID)
+        return Firebase(url: "\(BASE_REF)").childByAppendingPath(USER_PROFILES).childByAppendingPath(userID)
     }
     
     var HA_PROFILE_REF: Firebase {
         let userProfile = SessionManager.session[USER_PROFILE] as! UserProfile
-        return Firebase(url: "\(BASE_REF)").childByAppendingPath("ha_profiles").childByAppendingPath(userProfile.healthAssistantId)
+        return Firebase(url: "\(BASE_REF)").childByAppendingPath(HA_PROFILES).childByAppendingPath(userProfile.healthAssistantId)
     }
     
-    var USER_CHAT_SESSION_REF: Firebase {
+    var MY_MESSAGE_CENTER: Firebase {
         let userID = SessionManager.session[USER_ID] as! String
-        return Firebase(url: "\(BASE_REF)").childByAppendingPath("user_chat_sessions").childByAppendingPath(userID)
+        return Firebase(url: "\(BASE_REF)")
+            .childByAppendingPath(MESSAGE_CENTER)
+            .childByAppendingPath(userID)
     }
     
+    var HA_MESSAGE_CENTER: Firebase {
+        let userProfile = SessionManager.session[USER_PROFILE] as! UserProfile
+        let userID = SessionManager.session[USER_ID] as! String
+        
+        return Firebase(url: "\(BASE_REF)")
+            .childByAppendingPath(MESSAGE_CENTER)
+            .childByAppendingPath(userProfile.healthAssistantId)
+            .childByAppendingPath(userID)
+    }
+    
+    var REMOTE_USER_MESSAGE_CENTER: Firebase {
+        
+        guard let remoteUserId = SessionManager.session[REMOTE_USER_ID] as? String else {
+            // Can't do this in Swift 2, computed properties can't throw
+            // throw DataErrors.MissingSessionData(sessionKey: REMOTE_USER_ID)
+            // And by the way this sucks too...I need an error mananger...
+            return Firebase(url: "\(BASE_REF)")
+                .childByAppendingPath(MESSAGE_CENTER)
+        }
+        
+        guard let userID = SessionManager.session[USER_ID] as? String else {
+            // Can't do this in Swift 2, computed properties can't throw
+            // throw DataErrors.MissingSessionData(sessionKey: USER_ID)
+            // And by the way this sucks too...I need an error mananger...
+            return Firebase(url: "\(BASE_REF)")
+                .childByAppendingPath(MESSAGE_CENTER)
+        }
+        
+        return Firebase(url: "\(BASE_REF)")
+            .childByAppendingPath(MESSAGE_CENTER)
+            .childByAppendingPath(remoteUserId)
+            .childByAppendingPath(userID)
+    }
+    
+    func writeToRemoteHa(message: String) {
+        DataService.dataService.HA_MESSAGE_CENTER.childByAppendingPath("messages").childByAutoId().setValue(message)
+    }
+
+    func writeToRemoteUser(message: String) {
+        DataService.dataService.REMOTE_USER_MESSAGE_CENTER.childByAppendingPath("messages").childByAutoId().setValue(message)
+    }
+    
+    func observeMyMessageCenter(closure: FirebaseObserveEventType) -> FirebaseObserveEventType {
+        return { snapshot -> Void in
+            closure(snapshot: snapshot)
+        }
+    }
+
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
@@ -68,6 +124,17 @@ class DataService {
             
             completionHandler(data: data, response: response, error: error)
         }.resume()
+    }
+    
+    func processMessages(messageHistory: Dictionary<String, String>, newMessages: Dictionary<String, String>) -> Array<String> {
+        var processedMessages = newMessages
+        let oldMessageKeys = Set(messageHistory.keys)
+        
+        for key in oldMessageKeys {
+            processedMessages.removeValueForKey(key)
+        }
+        
+        return Array(processedMessages.values)
     }
 }
 

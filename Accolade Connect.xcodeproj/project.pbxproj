@@ -14,7 +14,7 @@
 		CD33B27C1C87312800B4773A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD33B27A1C87312800B4773A /* LaunchScreen.storyboard */; };
 		CD33B2871C87312800B4773A /* Accolade_ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2861C87312800B4773A /* Accolade_ConnectTests.swift */; };
 		CD33B2921C87312800B4773A /* Accolade_ConnectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2911C87312800B4773A /* Accolade_ConnectUITests.swift */; };
-		CD33B2A71C8732FF00B4773A /* ConnectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2A41C8732FF00B4773A /* ConnectController.swift */; };
+		CD33B2A71C8732FF00B4773A /* ClientMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2A41C8732FF00B4773A /* ClientMainController.swift */; };
 		CD33B2A81C8732FF00B4773A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2A51C8732FF00B4773A /* LoginController.swift */; };
 		CD33B2A91C8732FF00B4773A /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2A61C8732FF00B4773A /* SignupController.swift */; };
 		CD33B2AC1C87338A00B4773A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2AB1C87338A00B4773A /* DataService.swift */; };
@@ -22,6 +22,9 @@
 		CD33B2B21C87B85800B4773A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B11C87B85800B4773A /* SessionManager.swift */; };
 		CD33B2B61C87CA0300B4773A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B51C87CA0300B4773A /* UserProfile.swift */; };
 		CD33B2B81C87D44B00B4773A /* HAProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2B71C87D44B00B4773A /* HAProfile.swift */; };
+		CD33B2BB1C8F08D400B4773A /* UITextView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2BA1C8F08D400B4773A /* UITextView+Utility.swift */; };
+		CD33B2BE1C9371D400B4773A /* HAMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2BD1C9371D400B4773A /* HAMainController.swift */; };
+		CD33B2C11C94D51100B4773A /* DK Keswick.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD33B2C01C94D51100B4773A /* DK Keswick.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +60,7 @@
 		CD33B28D1C87312800B4773A /* Accolade ConnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Accolade ConnectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD33B2911C87312800B4773A /* Accolade_ConnectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accolade_ConnectUITests.swift; sourceTree = "<group>"; };
 		CD33B2931C87312800B4773A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD33B2A41C8732FF00B4773A /* ConnectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectController.swift; sourceTree = "<group>"; };
+		CD33B2A41C8732FF00B4773A /* ClientMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientMainController.swift; sourceTree = "<group>"; };
 		CD33B2A51C8732FF00B4773A /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CD33B2A61C8732FF00B4773A /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		CD33B2AB1C87338A00B4773A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -65,6 +68,9 @@
 		CD33B2B11C87B85800B4773A /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CD33B2B51C87CA0300B4773A /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CD33B2B71C87D44B00B4773A /* HAProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HAProfile.swift; sourceTree = "<group>"; };
+		CD33B2BA1C8F08D400B4773A /* UITextView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Utility.swift"; sourceTree = "<group>"; };
+		CD33B2BD1C9371D400B4773A /* HAMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HAMainController.swift; sourceTree = "<group>"; };
+		CD33B2C01C94D51100B4773A /* DK Keswick.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DK Keswick.otf"; path = "../../../../../Downloads/dk_keswick/DK Keswick.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,8 @@
 		CD33B2701C87312800B4773A /* Accolade Connect */ = {
 			isa = PBXGroup;
 			children = (
+				CD33B2BF1C94D4EA00B4773A /* Resources */,
+				CD33B2B91C8F088D00B4773A /* Extensions */,
 				CD33B2B31C87C9CF00B4773A /* Data */,
 				CD33B2AA1C87338A00B4773A /* Services */,
 				CD33B2A21C8732FF00B4773A /* UI */,
@@ -167,9 +175,10 @@
 		CD33B2A31C8732FF00B4773A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD33B2A41C8732FF00B4773A /* ConnectController.swift */,
+				CD33B2A41C8732FF00B4773A /* ClientMainController.swift */,
 				CD33B2A51C8732FF00B4773A /* LoginController.swift */,
 				CD33B2A61C8732FF00B4773A /* SignupController.swift */,
+				CD33B2BD1C9371D400B4773A /* HAMainController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +208,22 @@
 				CD33B2B71C87D44B00B4773A /* HAProfile.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		CD33B2B91C8F088D00B4773A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD33B2BA1C8F08D400B4773A /* UITextView+Utility.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CD33B2BF1C94D4EA00B4773A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD33B2C01C94D51100B4773A /* DK Keswick.otf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D75C66A08949289B7CD23434 /* Pods */ = {
@@ -319,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD33B27C1C87312800B4773A /* LaunchScreen.storyboard in Resources */,
+				CD33B2C11C94D51100B4773A /* DK Keswick.otf in Resources */,
 				CD33B2791C87312800B4773A /* Assets.xcassets in Resources */,
 				CD33B2771C87312800B4773A /* Main.storyboard in Resources */,
 			);
@@ -393,10 +419,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD33B2A71C8732FF00B4773A /* ConnectController.swift in Sources */,
+				CD33B2A71C8732FF00B4773A /* ClientMainController.swift in Sources */,
 				CD33B2A81C8732FF00B4773A /* LoginController.swift in Sources */,
 				CD33B2721C87312800B4773A /* AppDelegate.swift in Sources */,
 				CD33B2B81C87D44B00B4773A /* HAProfile.swift in Sources */,
+				CD33B2BB1C8F08D400B4773A /* UITextView+Utility.swift in Sources */,
+				CD33B2BE1C9371D400B4773A /* HAMainController.swift in Sources */,
 				CD33B2A91C8732FF00B4773A /* SignupController.swift in Sources */,
 				CD33B2B61C87CA0300B4773A /* UserProfile.swift in Sources */,
 				CD33B2AC1C87338A00B4773A /* DataService.swift in Sources */,
