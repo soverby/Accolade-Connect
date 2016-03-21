@@ -25,14 +25,14 @@ class ClientMainController: UIViewController, UITextFieldDelegate {
         DataService.dataService.USER_PROFILE_REF.observeEventType(.Value, withBlock:self.observeHAProfile())
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        let textToSend = "Sean: \(messageText.text!)"
-        DataService.dataService.writeToRemoteHa(textToSend)
-        chatHistory.text = chatHistory.text + "\n \(textToSend)"
-        textField.text = ""
-        chatHistory.scrollToBottom()
-        return false
-    }
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        let textToSend = "Sean: \(messageText.text!)"
+//        DataService.dataService.writeToRemoteHa(textToSend)
+//        chatHistory.text = chatHistory.text + "\n \(textToSend)"
+//        textField.text = ""
+//        chatHistory.scrollToBottom()
+//        return false
+//    }
     
     func observeHAMessageCenter() -> FirebaseObserveEventType {
         return { snapshot -> Void in

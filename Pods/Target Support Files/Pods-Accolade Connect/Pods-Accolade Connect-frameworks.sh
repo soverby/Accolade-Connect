@@ -85,7 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Accolade Connect/Firebase.framework"
+  install_framework "Pods-Accolade Connect/JSQMessagesViewController.framework"
+  install_framework "Pods-Accolade Connect/JSQSystemSoundPlayer.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Accolade Connect/Firebase.framework"
+  install_framework "Pods-Accolade Connect/JSQMessagesViewController.framework"
+  install_framework "Pods-Accolade Connect/JSQSystemSoundPlayer.framework"
 fi

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9A18FE8878542018719D3335'
+               BlueprintIdentifier = '7EAB5C4F432695277ACF179B'
                BlueprintName = 'Pods-Accolade Connect'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Accolade_Connect.framework'>

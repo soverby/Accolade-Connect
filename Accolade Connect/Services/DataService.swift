@@ -85,12 +85,12 @@ class DataService {
             .childByAppendingPath(userID)
     }
     
-    func writeToRemoteHa(message: String) {
-        DataService.dataService.HA_MESSAGE_CENTER.childByAppendingPath("messages").childByAutoId().setValue(message)
+    func writeToRemoteHa(message: ChatMessage) {
+        DataService.dataService.HA_MESSAGE_CENTER.childByAppendingPath("messages").childByAutoId().setValue(message.asDictionary())
     }
 
-    func writeToRemoteUser(message: String) {
-        DataService.dataService.REMOTE_USER_MESSAGE_CENTER.childByAppendingPath("messages").childByAutoId().setValue(message)
+    func writeToRemoteUser(message: ChatMessage) {
+        DataService.dataService.REMOTE_USER_MESSAGE_CENTER.childByAppendingPath("messages").childByAutoId().setValue(message.asDictionary())
     }
     
     func observeMyMessageCenter(closure: FirebaseObserveEventType) -> FirebaseObserveEventType {
@@ -136,6 +136,28 @@ class DataService {
         
         return Array(processedMessages.values)
     }
+
+    func processChatMessages(messageHistory: Dictionary<String, ChatMessage>, newMessages: Dictionary<String, AnyObject>) -> Dictionary<String, ChatMessage> {
+        
+        var processedMessages = newMessages
+        let oldMessageKeys = Set(messageHistory.keys)
+        
+        for key in oldMessageKeys {
+            processedMessages.removeValueForKey(key)
+        }
+        
+        var chatMessages = [String: ChatMessage]()
+        
+        for (key, value) in processedMessages {
+            if let chatDictionary = value as? Dictionary<String, AnyObject> {
+                chatMessages[key] = ChatMessage.init(jsonDictionary: chatDictionary)
+            }
+        }
+        
+        return chatMessages
+    }
+
+
 }
 
 

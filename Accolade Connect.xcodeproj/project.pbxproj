@@ -25,6 +25,9 @@
 		CD33B2BB1C8F08D400B4773A /* UITextView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2BA1C8F08D400B4773A /* UITextView+Utility.swift */; };
 		CD33B2BE1C9371D400B4773A /* HAMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B2BD1C9371D400B4773A /* HAMainController.swift */; };
 		CD33B2C11C94D51100B4773A /* DK Keswick.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD33B2C01C94D51100B4773A /* DK Keswick.otf */; };
+		CD7FC3671C9EFBAC007B4AA1 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FC3661C9EFBAC007B4AA1 /* MessageController.swift */; };
+		CD7FC3691C9EFC38007B4AA1 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FC3681C9EFC38007B4AA1 /* ChatMessage.swift */; };
+		CD7FC36C1C9F6C85007B4AA1 /* DataProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FC36B1C9F6C85007B4AA1 /* DataProcessorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		CD33B2BA1C8F08D400B4773A /* UITextView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Utility.swift"; sourceTree = "<group>"; };
 		CD33B2BD1C9371D400B4773A /* HAMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HAMainController.swift; sourceTree = "<group>"; };
 		CD33B2C01C94D51100B4773A /* DK Keswick.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DK Keswick.otf"; path = "../../../../../Downloads/dk_keswick/DK Keswick.otf"; sourceTree = "<group>"; };
+		CD7FC3661C9EFBAC007B4AA1 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		CD7FC3681C9EFC38007B4AA1 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		CD7FC36B1C9F6C85007B4AA1 /* DataProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProcessorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 			children = (
 				CD33B2861C87312800B4773A /* Accolade_ConnectTests.swift */,
 				CD33B2881C87312800B4773A /* Info.plist */,
+				CD7FC36B1C9F6C85007B4AA1 /* DataProcessorTests.swift */,
 			);
 			path = "Accolade ConnectTests";
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				CD33B2A51C8732FF00B4773A /* LoginController.swift */,
 				CD33B2A61C8732FF00B4773A /* SignupController.swift */,
 				CD33B2BD1C9371D400B4773A /* HAMainController.swift */,
+				CD7FC3661C9EFBAC007B4AA1 /* MessageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 			children = (
 				CD33B2B51C87CA0300B4773A /* UserProfile.swift */,
 				CD33B2B71C87D44B00B4773A /* HAProfile.swift */,
+				CD7FC3681C9EFC38007B4AA1 /* ChatMessage.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -237,6 +246,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CD383FDD1C98E7AE00E1F800 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		CD33B26D1C87312800B4773A /* Accolade Connect */ = {
 			isa = PBXNativeTarget;
@@ -248,6 +267,7 @@
 				CD33B26C1C87312800B4773A /* Resources */,
 				772D8CB26526978424C5F9EF /* Embed Pods Frameworks */,
 				CC218FD0050A363BAB3E9286 /* Copy Pods Resources */,
+				CD383FDD1C98E7AE00E1F800 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -421,11 +441,13 @@
 			files = (
 				CD33B2A71C8732FF00B4773A /* ClientMainController.swift in Sources */,
 				CD33B2A81C8732FF00B4773A /* LoginController.swift in Sources */,
+				CD7FC3691C9EFC38007B4AA1 /* ChatMessage.swift in Sources */,
 				CD33B2721C87312800B4773A /* AppDelegate.swift in Sources */,
 				CD33B2B81C87D44B00B4773A /* HAProfile.swift in Sources */,
 				CD33B2BB1C8F08D400B4773A /* UITextView+Utility.swift in Sources */,
 				CD33B2BE1C9371D400B4773A /* HAMainController.swift in Sources */,
 				CD33B2A91C8732FF00B4773A /* SignupController.swift in Sources */,
+				CD7FC3671C9EFBAC007B4AA1 /* MessageController.swift in Sources */,
 				CD33B2B61C87CA0300B4773A /* UserProfile.swift in Sources */,
 				CD33B2AC1C87338A00B4773A /* DataService.swift in Sources */,
 				CD33B2B01C8733AE00B4773A /* Constants.swift in Sources */,
@@ -437,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7FC36C1C9F6C85007B4AA1 /* DataProcessorTests.swift in Sources */,
 				CD33B2871C87312800B4773A /* Accolade_ConnectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,11 +595,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Accolade Connect/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Accolade",
+					Connect/Resources,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.accolade.Accolade-Connect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -587,11 +621,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Accolade Connect/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Accolade",
+					Connect/Resources,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.accolade.Accolade-Connect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

@@ -45,12 +45,12 @@ class HAMainController: UIViewController, UITextFieldDelegate {
             withBlock: DataService.dataService.observeMyMessageCenter(processNewMessageFunction()))
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        let textToSend = "Marie: \(messageText.text!)"
-        DataService.dataService.writeToRemoteUser(textToSend)
-        chatHistory.text = chatHistory.text + "\n \(textToSend)"
-        textField.text = ""
-        chatHistory.scrollToBottom()
-        return false
-    }
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        let textToSend = "Marie: \(messageText.text!)"
+//        DataService.dataService.writeToRemoteUser(textToSend)
+//        chatHistory.text = chatHistory.text + "\n \(textToSend)"
+//        textField.text = ""
+//        chatHistory.scrollToBottom()
+//        return false
+//    }
 }

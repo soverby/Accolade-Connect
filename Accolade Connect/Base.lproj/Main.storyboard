@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuz-Tl-osp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="1103"/>
+            <point key="canvasLocation" x="436" y="1207"/>
         </scene>
         <!--Client Main Controller-->
         <scene sceneID="x3Q-y8-VVu">
@@ -265,7 +265,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-Ps-zly">
                                 <rect key="frame" x="197" y="186" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="offlineStatus" translatesAutoresizingMaskIntoConstraints="NO" id="m4w-JF-mq8">
@@ -274,7 +274,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Offline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-1C-Fdi">
                                 <rect key="frame" x="240" y="220" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVN-32-sbJ">
@@ -293,13 +293,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-nc-ffZ">
+                                <rect key="frame" x="35" y="555" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="0jH-fA-RoW" kind="show" id="8W0-DL-BzZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KBM-yb-LO6" firstAttribute="top" secondItem="9OR-nc-ffZ" secondAttribute="bottom" constant="15" id="OSj-Z2-AJX"/>
                             <constraint firstItem="WU6-22-NIw" firstAttribute="centerX" secondItem="sOG-81-iqc" secondAttribute="centerX" id="SQQ-Fk-w0b"/>
                             <constraint firstItem="GfW-OM-fU0" firstAttribute="centerX" secondItem="sOG-81-iqc" secondAttribute="centerX" id="UBR-UT-QZT"/>
                             <constraint firstItem="WU6-22-NIw" firstAttribute="top" secondItem="a1k-Ir-uFW" secondAttribute="bottom" constant="335" id="jpo-EY-yJA"/>
                             <constraint firstItem="GfW-OM-fU0" firstAttribute="top" secondItem="a1k-Ir-uFW" secondAttribute="bottom" constant="31" id="qck-16-4m4"/>
+                            <constraint firstItem="9OR-nc-ffZ" firstAttribute="leading" secondItem="sOG-81-iqc" secondAttribute="leadingMargin" constant="15" id="r8J-5W-0d5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -314,6 +323,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6j-5t-doj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1148" y="348"/>
+        </scene>
+        <!--Message Controller-->
+        <scene sceneID="Ccj-e6-cHA">
+            <objects>
+                <viewController id="0jH-fA-RoW" customClass="MessageController" customModule="Accolade_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YkO-Uh-w10"/>
+                        <viewControllerLayoutGuide type="bottom" id="iy8-NO-hN7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KC6-r4-Y7f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vm6-iE-auS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="348"/>
         </scene>
         <!--HA Main Controller-->
         <scene sceneID="Urj-lK-uSN">
@@ -346,17 +373,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vus-5M-a0E">
+                                <rect key="frame" x="35" y="202" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="0jH-fA-RoW" kind="show" id="H8Y-L3-bUI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1ZR-aD-li7" firstAttribute="leading" secondItem="fJQ-Gb-ccN" secondAttribute="leadingMargin" constant="15" id="315-sI-wYh"/>
                             <constraint firstItem="Pze-dP-0Kr" firstAttribute="top" secondItem="1ZR-aD-li7" secondAttribute="bottom" constant="20" id="92u-GX-YqE"/>
+                            <constraint firstItem="Vus-5M-a0E" firstAttribute="leading" secondItem="fJQ-Gb-ccN" secondAttribute="leadingMargin" constant="15" id="Ajm-gV-70d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I0b-GK-LNn" secondAttribute="trailing" constant="15" id="D4x-oF-jJA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1ZR-aD-li7" secondAttribute="trailing" constant="15" id="Iei-dR-cXy"/>
                             <constraint firstItem="f0q-zS-X98" firstAttribute="centerX" secondItem="fJQ-Gb-ccN" secondAttribute="centerX" id="PZf-pD-YUu"/>
                             <constraint firstItem="I0b-GK-LNn" firstAttribute="top" secondItem="f0q-zS-X98" secondAttribute="bottom" constant="78" id="UEE-Kl-2oI"/>
                             <constraint firstItem="f0q-zS-X98" firstAttribute="top" secondItem="7SR-u1-1gi" secondAttribute="bottom" constant="20" id="YwF-Ay-10M"/>
                             <constraint firstItem="I0b-GK-LNn" firstAttribute="leading" secondItem="fJQ-Gb-ccN" secondAttribute="leadingMargin" constant="15" id="bg2-Bv-XcM"/>
+                            <constraint firstItem="I0b-GK-LNn" firstAttribute="top" secondItem="Vus-5M-a0E" secondAttribute="bottom" constant="14" id="kMi-x6-dnv"/>
                             <constraint firstItem="1ZR-aD-li7" firstAttribute="top" secondItem="I0b-GK-LNn" secondAttribute="bottom" constant="8" id="oDO-sE-EuK"/>
                         </constraints>
                     </view>
@@ -367,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqY-cL-Yoa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="1044"/>
+            <point key="canvasLocation" x="1157" y="1207"/>
         </scene>
     </scenes>
     <resources>
@@ -375,4 +411,7 @@
         <image name="MainBackground" width="414" height="733"/>
         <image name="offlineStatus" width="33" height="33"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="H8Y-L3-bUI"/>
+    </inferredMetricsTieBreakers>
 </document>
