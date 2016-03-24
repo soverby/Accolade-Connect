@@ -16,12 +16,14 @@ class ChatMessage: NSObject, JSQMessageData {
     private var _senderId: String
     private var _instant: NSDate
     private var _imageUrl: String?
+    private var _uuid: NSUUID
     
     convenience init(text: String?, senderName: String?, senderId: String?, imageUrl: String?) {
         self.init(text: text, senderName: senderName, senderId: senderId, imageUrl: imageUrl, instant: NSDate())
     }
     
     init(text: String?, senderName: String?, senderId: String?, imageUrl: String?, instant: NSDate?) {
+        _uuid = NSUUID()
         _text = text!
         _senderId = senderId!
         _senderName = senderName!
@@ -30,10 +32,15 @@ class ChatMessage: NSObject, JSQMessageData {
     }
     
     init(jsonDictionary: Dictionary<String, AnyObject>) {
+        _uuid = NSUUID()
         _text = jsonDictionary["text"] as! String!
         _senderId = jsonDictionary["senderId"] as! String!
         _senderName = jsonDictionary["senderName"] as! String!
-        _instant = jsonDictionary["instant"] as! NSDate!
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        _instant = formatter.dateFromString(jsonDictionary["instant"] as! String!)!
+        
         if let imageUrl = jsonDictionary["imageUrl"] as! String? {
             _imageUrl = imageUrl
         }
@@ -78,7 +85,7 @@ class ChatMessage: NSObject, JSQMessageData {
     }
     
     func messageHash() -> UInt {
-        return UInt(abs(_instant.hashValue))
+        return UInt(abs(_uuid.hashValue))
     }
     
 }

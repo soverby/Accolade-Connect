@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MlW-ek-KHm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MlW-ek-KHm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="128" id="ozc-c5-UI7"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ac-WU-YQD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ac-WU-YQD">
                                 <rect key="frame" x="247" y="370" width="107" height="30"/>
                                 <color key="backgroundColor" red="0.96212121210000001" green="0.1138182673" blue="0.91531424750000001" alpha="0.32000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -76,6 +76,7 @@
                                 </constraints>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="MlW-ek-KHm" eventType="touchUpInside" id="8XD-Ee-Ld4"/>
@@ -90,6 +91,27 @@
                                     <segue destination="K3B-B9-dd9" kind="show" id="J6k-7Y-sg5"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msd-Qd-mUc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-rF-ySW">
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="05c-Wp-AWg">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qtC-7g-pu9">
+                                                <rect key="frame" x="-275" y="-275" width="20" height="0.0"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0mU-oU-nvR"/>
+                                    <constraint firstAttribute="width" constant="50" id="zXI-NI-jhy"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -98,14 +120,20 @@
                             <constraint firstItem="wGS-UN-dM5" firstAttribute="top" secondItem="T2J-4c-4Jb" secondAttribute="bottom" constant="20" id="989-BZ-JgA"/>
                             <constraint firstItem="SBS-QN-eif" firstAttribute="leading" secondItem="Tu5-Ux-y27" secondAttribute="leading" id="9ta-Dc-LnV"/>
                             <constraint firstItem="3wx-xZ-3If" firstAttribute="centerX" secondItem="Tu5-Ux-y27" secondAttribute="centerX" id="CcW-P4-FS9"/>
+                            <constraint firstItem="Jjk-rF-ySW" firstAttribute="centerX" secondItem="Tu5-Ux-y27" secondAttribute="centerX" id="JqR-co-JyO"/>
                             <constraint firstItem="T2J-4c-4Jb" firstAttribute="leading" secondItem="Tu5-Ux-y27" secondAttribute="leadingMargin" constant="11" id="MAN-bZ-pBL"/>
                             <constraint firstItem="SBS-QN-eif" firstAttribute="top" secondItem="Tu5-Ux-y27" secondAttribute="topMargin" id="OwD-0S-nfi"/>
                             <constraint firstItem="to4-D7-xiQ" firstAttribute="top" secondItem="uQA-q7-OLI" secondAttribute="bottom" constant="83" id="P6T-5V-CiG"/>
                             <constraint firstItem="7ac-WU-YQD" firstAttribute="centerX" secondItem="Tu5-Ux-y27" secondAttribute="centerX" id="PxY-38-Rvb"/>
+                            <constraint firstItem="msd-Qd-mUc" firstAttribute="centerY" secondItem="Tu5-Ux-y27" secondAttribute="centerY" id="Spk-Sy-FGp"/>
+                            <constraint firstItem="msd-Qd-mUc" firstAttribute="width" secondItem="Tu5-Ux-y27" secondAttribute="width" id="UoV-r0-UJK"/>
                             <constraint firstItem="7ac-WU-YQD" firstAttribute="top" secondItem="1eA-vK-pAA" secondAttribute="bottom" constant="38" id="YCc-05-1d4"/>
+                            <constraint firstItem="msd-Qd-mUc" firstAttribute="centerX" secondItem="Tu5-Ux-y27" secondAttribute="centerX" id="bxs-rD-Jn8"/>
                             <constraint firstItem="3wx-xZ-3If" firstAttribute="top" secondItem="uQA-q7-OLI" secondAttribute="bottom" constant="79" id="f8q-MK-OjN"/>
                             <constraint firstItem="1eA-vK-pAA" firstAttribute="centerX" secondItem="Tu5-Ux-y27" secondAttribute="centerX" id="i4t-ti-Isy"/>
                             <constraint firstItem="uQA-q7-OLI" firstAttribute="top" secondItem="cDJ-8I-aWa" secondAttribute="bottom" constant="15" id="ica-od-UcV"/>
+                            <constraint firstItem="Jjk-rF-ySW" firstAttribute="centerY" secondItem="Tu5-Ux-y27" secondAttribute="centerY" id="l4T-cS-psB"/>
+                            <constraint firstItem="msd-Qd-mUc" firstAttribute="height" secondItem="Tu5-Ux-y27" secondAttribute="height" id="lBp-WA-WEL"/>
                             <constraint firstItem="3wx-xZ-3If" firstAttribute="leading" secondItem="to4-D7-xiQ" secondAttribute="trailing" constant="12.5" id="m4U-sx-kL1"/>
                             <constraint firstItem="SBS-QN-eif" firstAttribute="height" secondItem="Tu5-Ux-y27" secondAttribute="height" id="nDl-jL-st8"/>
                             <constraint firstItem="keH-8d-slS" firstAttribute="top" secondItem="to4-D7-xiQ" secondAttribute="bottom" constant="40" id="nJ5-oP-3Bk"/>
@@ -114,8 +142,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="qtC-7g-pu9" id="JN9-Ht-Hrr"/>
                         <outlet property="backgroundImage" destination="SBS-QN-eif" id="0Ih-io-F3M"/>
                         <outlet property="emailField" destination="3wx-xZ-3If" id="IVj-38-F3X"/>
+                        <outlet property="glassPaneView" destination="msd-Qd-mUc" id="zd6-73-xcI"/>
                         <outlet property="passwordField" destination="1eA-vK-pAA" id="ixk-pF-4x6"/>
                         <segue destination="PPb-a9-Fff" kind="show" identifier="clientLoggedInSegue" id="o3h-mv-Ud2"/>
                         <segue destination="lvA-dU-2cR" kind="show" identifier="HALoggedInSegue" id="N9a-Vf-bWg"/>
@@ -277,25 +307,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVN-32-sbJ">
-                                <rect key="frame" x="26" y="317" width="304" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-22-NIw">
-                                <rect key="frame" x="145" y="355" width="310" height="170"/>
-                                <color key="backgroundColor" red="0.96212121212121215" green="0.11381826727137602" blue="0.91531424749145274" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="310" id="48a-0K-nZV"/>
-                                    <constraint firstAttribute="height" constant="170" id="Xqg-TD-8ew"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-nc-ffZ">
-                                <rect key="frame" x="35" y="555" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-nc-ffZ">
+                                <rect key="frame" x="20" y="303" width="108" height="30"/>
+                                <state key="normal" title="Chat with Marie"/>
                                 <connections>
                                     <segue destination="0jH-fA-RoW" kind="show" id="8W0-DL-BzZ"/>
                                 </connections>
@@ -303,21 +317,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KBM-yb-LO6" firstAttribute="top" secondItem="9OR-nc-ffZ" secondAttribute="bottom" constant="15" id="OSj-Z2-AJX"/>
-                            <constraint firstItem="WU6-22-NIw" firstAttribute="centerX" secondItem="sOG-81-iqc" secondAttribute="centerX" id="SQQ-Fk-w0b"/>
                             <constraint firstItem="GfW-OM-fU0" firstAttribute="centerX" secondItem="sOG-81-iqc" secondAttribute="centerX" id="UBR-UT-QZT"/>
-                            <constraint firstItem="WU6-22-NIw" firstAttribute="top" secondItem="a1k-Ir-uFW" secondAttribute="bottom" constant="335" id="jpo-EY-yJA"/>
                             <constraint firstItem="GfW-OM-fU0" firstAttribute="top" secondItem="a1k-Ir-uFW" secondAttribute="bottom" constant="31" id="qck-16-4m4"/>
-                            <constraint firstItem="9OR-nc-ffZ" firstAttribute="leading" secondItem="sOG-81-iqc" secondAttribute="leadingMargin" constant="15" id="r8J-5W-0d5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chatHistory" destination="WU6-22-NIw" id="K6L-U3-kZt"/>
                         <outlet property="haOnlineStatusImage" destination="m4w-JF-mq8" id="euk-DI-D5B"/>
                         <outlet property="haOnlineStatusText" destination="NWd-1C-Fdi" id="6rc-KU-lFj"/>
                         <outlet property="haProfileImage" destination="uAj-b6-XB9" id="vqZ-XQ-gEf"/>
                         <outlet property="haProfileName" destination="QsB-Ps-zly" id="wxT-fY-bWr"/>
-                        <outlet property="messageText" destination="vVN-32-sbJ" id="Va4-fa-SHV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6j-5t-doj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,6 +420,6 @@
         <image name="offlineStatus" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H8Y-L3-bUI"/>
+        <segue reference="8W0-DL-BzZ"/>
     </inferredMetricsTieBreakers>
 </document>

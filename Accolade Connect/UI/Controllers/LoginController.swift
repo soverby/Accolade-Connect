@@ -13,7 +13,9 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var backgroundImage: UIImageView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var glassPaneView: UIView!
+    
     var userProfileHandle: UInt = 0
     
     override func viewDidLoad() {
@@ -37,8 +39,9 @@ class LoginController: UIViewController {
         let password = passwordField.text
         
         if email != "" && password != "" {
+            startActivityIndicator()
             DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { error, authData in
-                
+                self.stopActivityIndicator()
                 if error != nil {
                     print(error)
                     self.loginErrorAlert("Oops!", message: "Check your username and password.")
@@ -82,5 +85,14 @@ class LoginController: UIViewController {
         }
     }
     
+    func startActivityIndicator() {
+        glassPaneView.hidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopActivityIndicator() {
+        glassPaneView.hidden = true
+        activityIndicator.stopAnimating()
+    }
 }
 

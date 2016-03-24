@@ -15,24 +15,12 @@ class ClientMainController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var haProfileName: UILabel!
     @IBOutlet weak var haOnlineStatusImage: UIImageView!
     @IBOutlet weak var haOnlineStatusText: UILabel!
-    @IBOutlet weak var chatHistory: UITextView!
-    @IBOutlet weak var messageText: UITextField!
     
     var messageHistory = [String: String]()
 
     override func viewDidLoad() {
-        messageText.delegate = self
         DataService.dataService.USER_PROFILE_REF.observeEventType(.Value, withBlock:self.observeHAProfile())
     }
-    
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        let textToSend = "Sean: \(messageText.text!)"
-//        DataService.dataService.writeToRemoteHa(textToSend)
-//        chatHistory.text = chatHistory.text + "\n \(textToSend)"
-//        textField.text = ""
-//        chatHistory.scrollToBottom()
-//        return false
-//    }
     
     func observeHAMessageCenter() -> FirebaseObserveEventType {
         return { snapshot -> Void in
@@ -69,23 +57,16 @@ class ClientMainController: UIViewController, UITextFieldDelegate {
             })
         }
     }
-    
+
     func processNewMessageFunction() -> FirebaseObserveEventType {
         return { snapshot -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                print(snapshot.value)
+                // This will be the basis for my 'chat history'
+                // Right now defaulting to the first user
                 if let userList = snapshot.value as? Dictionary<String, AnyObject> {
                     for (key, value) in userList {
                         SessionManager.session[REMOTE_USER_ID] = key
-                        if let messageDictionary = value["messages"] as? Dictionary<String, String> {
-                            let messages = DataService.dataService.processMessages(self.messageHistory, newMessages: messageDictionary)
-                            
-                            for message in messages {
-                                self.chatHistory.text = self.chatHistory.text + "\n \(message)"
-                            }
-                            
-                            self.messageHistory = messageDictionary
-                        }
+                        print(value)
                     }
                 }
             })
